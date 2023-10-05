@@ -47,7 +47,7 @@ const Login = () => {
             // } else {
             //     navigate("/");
             // }
-            navigate("/");
+            navigate("/table");
         } catch (error) {
             console.log(error);
             setError(error.response.data.error);
@@ -73,8 +73,8 @@ const Login = () => {
                                             src="/loginBg.png"
                                             alt="/loginBg.png"
                                             style={{
-                                                width: '60%',
-                                                height: '60%'
+                                                width: '70%',
+                                                height: '70%'
                                             }}
                                         />
                                     </div>
@@ -134,7 +134,7 @@ const Login = () => {
                                         </div>
                                         {error && <p className="text-danger">{error}</p>}
                                         <button
-                                            className="btn btn-gradient-primary btn-round btn-block waves-effect waves-light position-absolute bottom-0 start-50 translate-middle-x fs-3 "
+                                            className="btn btn-outline-primary btn-round btn-block waves-effect waves-light position-absolute bottom-0 start-50 translate-middle-x fs-4 "
                                             type="submit"
                                         >
                                             {loading ? "Loading" : "Login"}

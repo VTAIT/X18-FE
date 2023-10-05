@@ -71,10 +71,9 @@ const Navbar = () => {
         <div className="d-flex justify-content-end align-items-center flex-fill gap-4"
 
         >
-          <div className="d-flex align-items-center gap-2 cursor-pointer px-1 rounded-1"
+          <div className="d-flex align-items-center justify-content-center gap-2 cursor-pointer px-1 rounded-1 w-50"
             style={{
-              backgroundColor: '#FCDAB4',
-              width: 95
+              backgroundColor: '#FCDAB4'
             }}>
             <img src="/phone.png" alt="phone.png" width={20} height={20} />
             <span>123 456 78</span>
