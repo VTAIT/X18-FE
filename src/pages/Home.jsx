@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from '../components/Slider'
 import Featured from '../components/Featured'
+import Footer from '../components/Footer'
 
 const Home = () => {
     return (
@@ -8,6 +9,7 @@ const Home = () => {
             <Slider />
             <Featured />
             {/* <Offer /> */}
+            <Footer />
         </div>
     )
 }

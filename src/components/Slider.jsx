@@ -31,26 +31,30 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="d-flex align-items-center" >
-      <div className="w-50 d-flex align-items-center justify-content-center flex-column">
-        <span className="fs-2 fw-blod mb-3">
-          {data[currentSlide].title}
-        </span>
-        <div className="bg-my-primary text-white w-25 d-flex align-items-center justify-content-center fs-3"
-        style={{
-          height: 35
-        }}>Đặt bàn ngay</div>
-      </div>
-      <div className="w-50 bg-my-primary">
+    <div className="w-100 row align-items-center justify-content-center" >
+      <div className="col">
         <img
           src={data[currentSlide].image}
           alt={data[currentSlide].image}
           style={{
             width: '100%',
-            height: 541
+            height: 700
           }}
         />
       </div>
+
+      <div className="col align-items-center justify-content-center d-none d-md-block">
+        <div className=" d-flex align-items-center justify-content-center flex-column fs-2 fw-blod mb-3">
+          {data[currentSlide].title}
+          <div className="bg-my-primary text-white w-50 d-flex align-items-center justify-content-center fs-3"
+            style={{
+              height: 35
+            }}>
+            Đặt bàn ngay
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };

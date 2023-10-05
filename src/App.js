@@ -1,17 +1,31 @@
-import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Notification from "./components/Notification";
 import './App.css'
-import Home from "./pages/Home";
+import routes from "./routes/routes";
+import { Route, Routes } from "react-router-dom";
+import AppState from "./contexts/AppContext/AppState";
+import Main from "./components/Main";
 
 function App() {
   return (
-    <div className="App">
+    <AppState>
       <Notification />
       <Navbar />
-      <Home />
-      <Footer />
-    </div>
+        <Routes>
+          {
+            routes.map((item, index) => {
+              return (
+                <Route
+                  key={index}
+                  path={item.path}
+                  element={item.component}
+                />
+              );
+            })
+          }
+        </Routes>
+    </AppState>
+
   );
 }
 

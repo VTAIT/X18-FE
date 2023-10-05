@@ -24,13 +24,13 @@ const Menu = () => {
         className="cursor-pointer"
       />
       {open && (
-        <div className="position-absolute start-0 w-100"
+        <div className="position-absolute start-0 w-100 z-1"
           style={{
-            marginTop: 10
+            marginTop: 25
           }}>
           <div className="bg-my-primary text-white d-flex flex-column align-items-center justify-content-center fs-3"
             style={{
-              height: 'calc(100vh - 75px)'
+              height: 'calc(100vh - 100px)'
             }}>
             {links.map((item) => (
               <span className="mb-5" href={item.url} key={item.id} onClick={() => setOpen(false)}>
