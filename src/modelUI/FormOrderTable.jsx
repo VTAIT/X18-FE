@@ -1,4 +1,4 @@
-const TableDetailModalModel = [
+const FormOrderTable = [
   {
     label: "Full name",
     fieldName: "fullName",
@@ -31,6 +31,14 @@ const TableDetailModalModel = [
     label: "Phone",
     fieldName: "phone",
   },
+  {
+    label: "Check-in time",
+    fieldName: "time",
+  },
+  {
+    label: "Order quantity",
+    fieldName: "quantity",
+  },
 ];
 
-export { TableDetailModalModel };
+export { FormOrderTable };

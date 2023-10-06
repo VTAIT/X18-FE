@@ -1,26 +1,40 @@
 import React, { useContext, useEffect, useState } from "react";
 import Main from "../components/Main";
 import AppContext from "../contexts/AppContext/AppContext";
-import { TableDetailModal } from "../modals/TableDetailModal";
+import { useNavigate } from "react-router-dom";
 
 const Table = () => {
-  const { tableList } = useContext(AppContext);
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => {
-    setShow(true);
+  const { tableList, selectList, setSelectList } = useContext(AppContext);
+  const [tableInfo, setTableInfo] = useState([]);
+  const navigate = useNavigate();
+  const handleNext = () => {
+    if (tableInfo.length === 0) {
+      return;
+    }
+    navigate("/order");
   };
+
+  const handleChooseTable = (info) => {
+    const newListInfo = [...tableInfo, info];
+    const newListSelect = [...selectList, info];
+    setTableInfo(newListInfo);
+    setSelectList(newListSelect);
+  }
+
   return (
     <Main>
       <div className="container text-white h-100">
+        <h1>
+          Xin Mời chọn bàn
+        </h1>
         <div className="row row-cols-4">
           {tableList.map((item, index) => {
             return (
               <div key={index} className="col p-4 ">
                 <button
                   type="button"
-                  className="bg-my-primary border-0 ratio ratio-1x1 d-flex align-items-center justify-content-center "
-                  onClick={handleShow}
+                  className={selectList.includes(item) ? "bg-my-primary ratio ratio-1x1 d-flex align-items-center justify-content-center border-2":"bg-my-primary ratio ratio-1x1 d-flex align-items-center justify-content-center border-0"}
+                  onClick={() => handleChooseTable(item)}
                 >
                   A {item}
                 </button>
@@ -29,10 +43,12 @@ const Table = () => {
           })}
         </div>
       </div>
-      <TableDetailModal
-      show={show}
-      handleClose={handleClose}
-      />
+      <div className="position-fixed bottom-0 end-0 z-1 p-4">
+        <button type="button" className="bg-my-primary text-center text-white fs-3 p-2 rounded-1 border-0"
+          onClick={handleNext}>
+          Tiếp theo
+        </button>
+      </div>
     </Main>
   );
 };

@@ -1,32 +1,7 @@
 import React from "react";
 import Menu from "./Menu";
 import { NavLink } from "react-router-dom";
-
-const navLinkLeft = [
-  {
-    path: "/",
-    text: "HomePage"
-  },
-  {
-    path: "/menu",
-    text: "Menu"
-  },
-  {
-    path: "/contact",
-    text: "Contact"
-  }
-];
-
-const navLinkRight = [
-  {
-    path: "/login",
-    text: "Login"
-  },
-  {
-    path: "/cart",
-    text: "Cart"
-  }
-];
+import { navLinkLeft, navLinkRight } from "../modelUI/NavbarLink";
 
 const Navbar = () => {
   const isLogin = false;

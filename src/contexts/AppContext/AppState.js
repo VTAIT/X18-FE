@@ -3,16 +3,25 @@ import AppContext from "./AppContext";
 
 const AppState = ({ children }) => {
   const [tableList, setTableList] = useState([]);
+  const [selectList, setSelectList] = useState([]);
 
-  useEffect(()=> {
-    setTableList([1,2,3,4,5,6,7,8,9,10]);
-  },[]);
+  useEffect(() => {
+    let list = [];
+    for (let index = 0; index < 50; index++) {
+      list.push(index);
+    }
+    setTableList(list);
+  }, []);
+
+
 
   return (
     <AppContext.Provider
       value={{
         tableList,
-        setTableList
+        setTableList,
+        selectList,
+        setSelectList
       }}
     >
       {children}

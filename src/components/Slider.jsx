@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import AppContext from "../contexts/AppContext/AppContext";
 
 const data = [
   {
@@ -20,6 +22,8 @@ const data = [
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
+  const { setSelectList } = useContext(AppContext);
 
   useEffect(() => {
     const interval = setInterval(
@@ -46,12 +50,16 @@ const Slider = () => {
       <div className="col align-items-center justify-content-center d-none d-md-block">
         <div className=" d-flex align-items-center justify-content-center flex-column fs-2 fw-blod mb-3">
           {data[currentSlide].title}
-          <div className="bg-my-primary text-white w-50 d-flex align-items-center justify-content-center fs-3"
+          <button className="bg-my-primary text-white w-50 d-flex align-items-center justify-content-center fs-3 border-0"
             style={{
               height: 35
+            }}
+            onClick={() => {
+              setSelectList([]);
+              navigate("/table");
             }}>
             Đặt bàn ngay
-          </div>
+          </button>
         </div>
       </div>
 

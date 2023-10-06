@@ -1,8 +1,11 @@
+import Food from "../pages/Food";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import Order from "../pages/Order";
+import Payment from "../pages/Payment";
 import Table from "../pages/Table";
 
-export const routes = [
+const routes = [
     {
         path: "/",
         component: <Home />,
@@ -21,6 +24,23 @@ export const routes = [
         isPrivate: false,
         isAdmin: false,
     },
-
+    {
+        path: "/order",
+        component: <Order />,
+        isPrivate: false,
+        isAdmin: false,
+    },
+    {
+        path: "/menu",
+        component: <Food />,
+        isPrivate: false,
+        isAdmin: false,
+    },
+    {
+        path: "/payment",
+        component: <Payment />,
+        isPrivate: false,
+        isAdmin: false,
+    },
 ];
 export default routes;
