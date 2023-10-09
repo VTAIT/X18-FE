@@ -32,15 +32,29 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-.bg-my-primary{
+.bg-my-primary {
   background-color: #F6921E;
 }
 
-.text-my-color-navbar{
+.text-my-color-navbar {
   color: #F6921E;
+}
+
+.my-layout {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-container {
+  max-width: 1200px;
+  width: 100%;
 }

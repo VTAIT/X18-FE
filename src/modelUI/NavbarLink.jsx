@@ -12,8 +12,8 @@ const navLinkLeft = [
         text: "Contact"
     },
     {
-        path: "/menu",
-        text: "menu"
+        path: "/table",
+        text: "table"
     },
     {
         path: "/payment",

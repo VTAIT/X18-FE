@@ -1,8 +1,8 @@
 import Food from "../pages/Food";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
-import Order from "../pages/Order";
 import Payment from "../pages/Payment";
+import Reservation from "../pages/Reservation";
 import Table from "../pages/Table";
 
 const routes = [
@@ -25,8 +25,8 @@ const routes = [
         isAdmin: false,
     },
     {
-        path: "/order",
-        component: <Order />,
+        path: "/reservation",
+        component: <Reservation />,
         isPrivate: false,
         isAdmin: false,
     },

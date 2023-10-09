@@ -4,22 +4,21 @@ import AppContext from "../contexts/AppContext/AppContext";
 import { useNavigate } from "react-router-dom";
 
 const Table = () => {
-  const { tableList, selectList, setSelectList } = useContext(AppContext);
-  const [tableInfo, setTableInfo] = useState([]);
+  const { reservation, tableList, selectList, setSelectList } = useContext(AppContext);
   const navigate = useNavigate();
   const handleNext = () => {
-    if (tableInfo.length === 0) {
+    if (selectList.length === 0) {
       return;
     }
-    navigate("/order");
+    navigate("/reservation");
   };
 
   const handleChooseTable = (info) => {
-    const newListInfo = [...tableInfo, info];
     const newListSelect = [...selectList, info];
-    setTableInfo(newListInfo);
     setSelectList(newListSelect);
   }
+
+  console.log("Table reservation", reservation);
 
   return (
     <Main>

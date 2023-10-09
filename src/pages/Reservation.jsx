@@ -8,8 +8,8 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { FormOrderTable } from '../modelUI/FormOrderTable';
 import { useNavigate } from 'react-router-dom';
 
-const Order = () => {
-    const { selectList, setSelectList } = useContext(AppContext);
+const Reservation = () => {
+    const { reservation, selectList, setSelectList } = useContext(AppContext);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const initialValues = {
@@ -72,6 +72,12 @@ const Order = () => {
                     Thông tin đặt bàn
                 </h1>
                 <hr />
+                {/* Thông tin của nhà hàng */}
+                <div className="form-group row w-75 mt-2">
+                    <label className="col fs-5 "> {capitalizeFirstLetter("Tên nhà hàng")}</label>
+                    <label className="col fs-5 "> {reservation.restaurantId}</label>
+                </div>
+                {/* Thông tin của bàn ăn */}
                 {
                     Object.keys(TableDetail).map((key, index) => {
                         return (
@@ -138,4 +144,4 @@ const Order = () => {
     )
 }
 
-export default Order;
+export default Reservation;

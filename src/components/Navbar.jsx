@@ -18,6 +18,7 @@ const Navbar = () => {
             navLinkLeft.map((item, index) => {
               return (
                 <NavLink
+                  key={index}
                   to={item.path}
                   className="nav-link"
                   onClick={(e) => {

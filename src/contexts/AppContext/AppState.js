@@ -4,6 +4,7 @@ import AppContext from "./AppContext";
 const AppState = ({ children }) => {
   const [tableList, setTableList] = useState([]);
   const [selectList, setSelectList] = useState([]);
+  const [reservation, setReservation] = useState({});
 
   useEffect(() => {
     let list = [];
@@ -21,7 +22,9 @@ const AppState = ({ children }) => {
         tableList,
         setTableList,
         selectList,
-        setSelectList
+        setSelectList,
+        reservation,
+        setReservation
       }}
     >
       {children}

@@ -1,14 +1,13 @@
 import React from 'react'
 import Slider from '../components/Slider'
-import Featured from '../components/Featured'
 import Footer from '../components/Footer'
+import FindRestaurant from '../components/FindRestaurant'
 
 const Home = () => {
     return (
         <div>
+            <FindRestaurant />
             <Slider />
-            <Featured />
-            {/* <Offer /> */}
             <Footer />
         </div>
     )

@@ -5,12 +5,14 @@ import routes from "./routes/routes";
 import { Route, Routes } from "react-router-dom";
 import AppState from "./contexts/AppContext/AppState";
 import Main from "./components/Main";
+import MainLayout from "./components/MainLayout";
 
 function App() {
   return (
     <AppState>
-      <Notification />
-      <Navbar />
+      <MainLayout>
+        <Notification />
+        <Navbar />
         <Routes>
           {
             routes.map((item, index) => {
@@ -24,6 +26,8 @@ function App() {
             })
           }
         </Routes>
+      </MainLayout>
+
     </AppState>
 
   );
