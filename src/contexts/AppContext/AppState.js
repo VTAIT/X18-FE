@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AppContext from "./AppContext";
+import { randomInt } from "../../utils/Random";
 
 const AppState = ({ children }) => {
   const [tableList, setTableList] = useState([]);
@@ -11,8 +12,9 @@ const AppState = ({ children }) => {
     let tables = [];
     for (let index = 0; index < 50; index++) {
       tables.push({
-        index,
-        image: "/table/CN_6.png"
+        tableId: index,
+        image: "/table/CN_6.png",
+        status: randomInt(3,1)
       });
     }
     setTableList(tables);
@@ -26,7 +28,7 @@ const AppState = ({ children }) => {
         closeTime: "Fri Oct 06 2023 21:10:33",
         description: `Nhà hàng ngon số ${index}`,
         images: ["/slide1.png", "/slide2.png", "/slide3.jpg","/slide1.png", "/slide2.png",]
-      }
+      };
       restaurants.push(item);
     }
     setRestaurants(restaurants);

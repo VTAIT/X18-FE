@@ -58,3 +58,15 @@
   max-width: 1200px;
   width: 100%;
 }
+
+.color-free{
+  background-color: #33cc33;
+}
+
+.color-reservation{
+  background-color: #ff9900;
+}
+
+.color-active{
+  background-color: #ff3300;
+}
