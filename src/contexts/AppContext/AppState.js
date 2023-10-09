@@ -5,13 +5,28 @@ const AppState = ({ children }) => {
   const [tableList, setTableList] = useState([]);
   const [selectList, setSelectList] = useState([]);
   const [reservation, setReservation] = useState({});
+  const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
-    let list = [];
+    let tables = [];
     for (let index = 0; index < 50; index++) {
-      list.push(index);
+      tables.push(index);
     }
-    setTableList(list);
+    setTableList(tables);
+
+    let restaurants = [];
+    for (let index = 0; index < 5; index++) {
+      const item = {
+        name: `Cơ sở số ${index}`,
+        address: `Địa chỉ số ${index}`,
+        openTime: "Fri Oct 06 2023 21:10:33",
+        closeTime: "Fri Oct 06 2023 21:10:33",
+        description: `Nhà hàng ngon số ${index}`,
+        images: ["/slide1.png", "/slide2.png", "/slide3.jpg","/slide1.png", "/slide2.png",]
+      }
+      restaurants.push(item);
+    }
+    setRestaurants(restaurants);
   }, []);
 
 
@@ -24,7 +39,9 @@ const AppState = ({ children }) => {
         selectList,
         setSelectList,
         reservation,
-        setReservation
+        setReservation,
+        restaurants,
+        setRestaurants
       }}
     >
       {children}

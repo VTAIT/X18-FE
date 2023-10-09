@@ -2,14 +2,15 @@ import React, { useContext, useState } from 'react'
 import Main from '../components/Main';
 import AppContext from '../contexts/AppContext/AppContext';
 import * as Yup from "yup";
-import TableDetail from '../models/TableDetail';
+import TableDetail from '../models/Table';
 import { capitalizeFirstLetter } from '../utils/CapitalizeFirstLetter';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { FormOrderTable } from '../modelUI/FormOrderTable';
 import { useNavigate } from 'react-router-dom';
+import dayjs from 'dayjs';
 
 const Reservation = () => {
-    const { reservation, selectList, setSelectList } = useContext(AppContext);
+    const { reservation, selectList, setSelectList, setReservation } = useContext(AppContext);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const initialValues = {
@@ -25,14 +26,8 @@ const Reservation = () => {
     });
 
     function onSubmit(fields, { setStatus, setSubmitting, resetForm }) {
-        // if (isAddMode) {
-        //   createCustomer(fields, setSubmitting, resetForm);
-        //   onUpdateCustomer();
-        // } else {
-        //   updateCustomer(fields, setSubmitting);
-        //   onUpdateCustomer();
-        // }
         setSelectList([]);
+        setReservation({});
         navigate("/");
     }
 
@@ -63,8 +58,7 @@ const Reservation = () => {
     //       })
     //       .finally(setLoading(false));
     //   }
-    TableDetail.tablenumber = selectList.sort().join(", ");
-
+    TableDetail.tableId = selectList.sort().join(", ");
     return (
         <Main>
             <div className="container h-100 mt-5">

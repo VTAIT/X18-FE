@@ -4,7 +4,7 @@ import AppContext from "../contexts/AppContext/AppContext";
 import { useNavigate } from "react-router-dom";
 
 const Table = () => {
-  const { reservation, tableList, selectList, setSelectList } = useContext(AppContext);
+  const { tableList, selectList, setSelectList } = useContext(AppContext);
   const navigate = useNavigate();
   const handleNext = () => {
     if (selectList.length === 0) {
@@ -14,11 +14,18 @@ const Table = () => {
   };
 
   const handleChooseTable = (info) => {
-    const newListSelect = [...selectList, info];
+    // Kiểm tra trạng thái bàn
+
+    // Thêm/xóa bàn vào danh sách đang chọn
+    const filterList = selectList.filter((item) => item !== info);
+    let newListSelect = [];
+    if (filterList.length === selectList.length) {
+      newListSelect = [...selectList, info];
+    }else{
+      newListSelect = filterList;
+    }
     setSelectList(newListSelect);
   }
-
-  console.log("Table reservation", reservation);
 
   return (
     <Main>
@@ -32,7 +39,7 @@ const Table = () => {
               <div key={index} className="col p-4 ">
                 <button
                   type="button"
-                  className={selectList.includes(item) ? "bg-my-primary ratio ratio-1x1 d-flex align-items-center justify-content-center border-2":"bg-my-primary ratio ratio-1x1 d-flex align-items-center justify-content-center border-0"}
+                  className={selectList.includes(item) ? "bg-my-primary ratio ratio-1x1 d-flex align-items-center justify-content-center border-2" : "bg-my-primary ratio ratio-1x1 d-flex align-items-center justify-content-center border-0"}
                   onClick={() => handleChooseTable(item)}
                 >
                   A {item}
