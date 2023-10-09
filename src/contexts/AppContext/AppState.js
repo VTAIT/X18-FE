@@ -10,7 +10,10 @@ const AppState = ({ children }) => {
   useEffect(() => {
     let tables = [];
     for (let index = 0; index < 50; index++) {
-      tables.push(index);
+      tables.push({
+        index,
+        image: "/table/CN_6.png"
+      });
     }
     setTableList(tables);
 

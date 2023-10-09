@@ -21,7 +21,7 @@ const Table = () => {
     let newListSelect = [];
     if (filterList.length === selectList.length) {
       newListSelect = [...selectList, info];
-    }else{
+    } else {
       newListSelect = filterList;
     }
     setSelectList(newListSelect);
@@ -29,20 +29,30 @@ const Table = () => {
 
   return (
     <Main>
-      <div className="container text-white h-100">
-        <h1>
-          Xin Mời chọn bàn
+      <div className="container h-100">
+        <h1 className="mt-2">
+          Xin mời chọn bàn
         </h1>
         <div className="row row-cols-4">
           {tableList.map((item, index) => {
+            const styleDefault = "bg-my-primary ratio ratio-1x1 d-flex flex-column align-items-center justify-content-center p-3 fs-4";
+            const styles = selectList.includes(item) ? `${styleDefault} border-2` : `${styleDefault} border-0`;
             return (
               <div key={index} className="col p-4 ">
                 <button
                   type="button"
-                  className={selectList.includes(item) ? "bg-my-primary ratio ratio-1x1 d-flex align-items-center justify-content-center border-2" : "bg-my-primary ratio ratio-1x1 d-flex align-items-center justify-content-center border-0"}
+                  className={styles}
                   onClick={() => handleChooseTable(item)}
                 >
-                  A {item}
+                  <img
+                    src={item.image}
+                    alt={item.image}
+                    style={{
+                      width: '100%',
+                      height: "100%"
+                    }}
+                  />
+                  A {item.index}
                 </button>
               </div>
             );
