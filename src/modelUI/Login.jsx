@@ -1,4 +1,4 @@
-const LoginModel = [
+const Login = [
     {
         label: "Username",
         fieldName: "username",
@@ -11,4 +11,4 @@ const LoginModel = [
     },
 ];
 
-export { LoginModel };
+export default Login;

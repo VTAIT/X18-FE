@@ -11,6 +11,9 @@ const Navbar = () => {
         height: 70
       }}
     >
+      <div className="fs-3 fw-bold p-4 d-flex flex-fill justify-content-md-center align-items-center">
+        <span>Brother Restaurant</span>
+      </div>
 
       <div className="p-4 d-flex justify-content-start align-items-center flex-fill d-none d-md-block">
         <div className="d-flex justify-content-center align-items-center gap-4">
@@ -31,11 +34,6 @@ const Navbar = () => {
             })
           }
         </div>
-
-      </div>
-
-      <div className="fs-3 fw-bold p-4 d-flex flex-fill justify-content-md-center align-items-center">
-        <span>Brother Restaurant</span>
       </div>
 
       {/* MOBILE MENU */}
@@ -54,7 +52,24 @@ const Navbar = () => {
             <img src="/phone.png" alt="phone.png" width={20} height={20} />
             <span>123 456 78</span>
           </div>
+
+          {/* Hiển thị tất cả */}
           {
+            navLinkRight.map((item, index) => {
+              return <NavLink
+                key={index + navLinkLeft.length}
+                to={item.path}
+                className="nav-link"
+                onClick={(e) => {
+
+                }}
+              >
+                {item.text}
+              </NavLink>
+            })
+          }
+          {/* Kiểm tra trạng thái đăng nhập */}
+          {/* {
             isLogin ? (
               <NavLink
                 to={navLinkRight[1].path}
@@ -75,7 +90,7 @@ const Navbar = () => {
               >
                 {navLinkRight[0].text}
               </NavLink>
-            )}
+            )} */}
         </div>
       </div>
 

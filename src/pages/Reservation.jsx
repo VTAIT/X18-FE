@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Main from "../components/Main";
 import AppContext from "../contexts/AppContext/AppContext";
 import * as Yup from "yup";
-import TableDetail from "../models/Table";
+import TableDetail from "../modelUI/Table";
 import { capitalizeFirstLetter } from "../utils/CapitalizeFirstLetter";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { FormOrderTable } from "../modelUI/FormOrderTable";

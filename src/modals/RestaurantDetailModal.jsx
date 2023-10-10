@@ -83,7 +83,7 @@ const RestaurantDetailModal = ({ show, onHide, restaurant }) => {
                 }}>Đặt bàn</Button>
             </Modal.Footer>
         </Modal>
-    )
+    );
 }
 
 export default RestaurantDetailModal

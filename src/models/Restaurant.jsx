@@ -7,4 +7,22 @@ export const Restaurant = {
     images: [],
 };
 
-export default Restaurant;
+const createRestaurant = ({
+    name,
+    address,
+    openTime,
+    closeTime,
+    description,
+    images,
+}) => {
+    return {
+        name,
+        address,
+        openTime,
+        closeTime,
+        description,
+        images,
+    }
+}
+
+export default createRestaurant;

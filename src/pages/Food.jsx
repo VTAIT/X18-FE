@@ -24,7 +24,7 @@ const dataTemple = {
 }
 
 
-const Food = () => {
+const Food = ({ showDesc = true }) => {
     let foodList = [];
     for (let index = 0; index < 50; index++) {
         foodList.push(dataTemple);
@@ -34,7 +34,7 @@ const Food = () => {
             <div className='container h-100'>
                 <div className="row row-cols-4 text-my-color-navbar">
                     {foodList.map((item, index) => (
-                        <div className="col p-4 align-items-center justify-content-center">
+                        <div key={index} className="col p-4 align-items-center justify-content-center">
                             {item.img && (
                                 <img src={item.img} alt={item.img} className="img-fluid" />
                             )}
@@ -42,9 +42,11 @@ const Food = () => {
                                 <h1 className="fs-3 fw-bold text-uppercase">
                                     {item.title}
                                 </h1>
-                                <p className="p-2">
-                                    {item.desc}
-                                </p>
+                                {
+                                    showDesc && <p className="p-2">
+                                        {item.desc}
+                                    </p>
+                                }
                                 <span className="fs-3 fw-bold">
                                     ${item.price}
                                 </span>

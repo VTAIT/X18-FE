@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
-import { LoginModel } from '../modelUI/Login';
+import LoginUI from '../../modelUI/Login';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { NavLink, useNavigate } from "react-router-dom";
+import Main from '../../components/Main';
 // import authAPI from "../apis/authAPI";
 import {
-    FaFacebookF,
-    FaGoogle,
     FaLock,
     FaRightToBracket,
-    FaTwitter,
 } from "react-icons/fa6";
-import Main from '../components/Main';
+
 
 const Login = () => {
     const [loading, setLoading] = useState(false);
@@ -82,7 +80,7 @@ const Login = () => {
 
                                 <div className='col align-items-center justify-content-start p-4 h-100'>
                                     <Form className="form-horizontal auth-form h-100  position-relative">
-                                        {LoginModel.map((item) => {
+                                        {LoginUI.map((item) => {
                                             return (<div key={item.fieldName} className="form-group col">
                                                 <label className='fs-4 '>{item.label}</label>
                                                 <Field

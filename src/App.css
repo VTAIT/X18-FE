@@ -59,14 +59,20 @@
   width: 100%;
 }
 
-.color-free{
+.color-free {
   background-color: #33cc33;
 }
 
-.color-reservation{
+.color-reservation {
   background-color: #ff9900;
 }
 
-.color-active{
+.color-active {
   background-color: #ff3300;
+}
+
+.modal-90 {
+  width: 90%;    /* Occupy the 90% of the screen width */
+  max-width: 90%;
+  margin: auto;
 }

@@ -9,4 +9,24 @@ export const Table = {
     shape: "Vuông"
 };
 
-export default Table;
+const createTable = ({
+    tableId,
+    image,
+    status,
+    floor,
+    tablenumbe,
+    numberSeat,
+    shape
+}) => {
+    return {
+        tableId,
+        image,
+        status,
+        floor,
+        tablenumbe,
+        numberSeat,
+        shape
+    }
+}
+
+export default createTable;
