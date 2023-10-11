@@ -8,7 +8,7 @@ const MenuModal = ({ show, onHide , tableName}) => {
         <Modal
             show={show}
             onHide={onHide}
-            contentClassName="modal-90"
+            dialogClassName="modal-90"
             aria-labelledby="contained-modal-title-vcenter"
             centered
             scrollable={true}

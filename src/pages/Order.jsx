@@ -45,7 +45,7 @@ const Order = () => {
                         height: 60,
                     }}
                 >
-                    <h2 className="col px-4">Mời chọn bàn để lên thực đơn</h2>
+                    <h2 className="col px-4">Mời chọn bàn để đặt món</h2>
                 </div>
                 <div className="row row-cols-4">
                     {tableActiveList.map((item, index) => {

@@ -1,3 +1,4 @@
+import { ManageNavbar } from "../modelUI/ManageNavbar";
 import Food from "../pages/Food";
 import Home from "../pages/Home";
 import Order from "../pages/Order";
@@ -6,7 +7,9 @@ import Reservation from "../pages/Reservation";
 import Table from "../pages/Table";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
+import Account from "../pages/manages/Account";
 import Board from "../pages/manages/Board";
+import Manage from "../pages/manages/Manage";
 
 const routes = [
     {
@@ -58,10 +61,11 @@ const routes = [
         isAdmin: false,
     },
     {
-        path: "/board",
-        component: <Board />,
+        path: "/manage",
+        component: <Manage />,
         isPrivate: false,
         isAdmin: false,
+        navBar: ManageNavbar
     },
 ];
 export default routes;

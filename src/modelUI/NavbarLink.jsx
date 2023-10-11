@@ -39,8 +39,8 @@ const navLinkRight = [
         text: "Cart"
     },
     {
-        path: "/board",
-        text: "Board"
+        path: "/manage",
+        text: "Manage"
     },
 ];
 

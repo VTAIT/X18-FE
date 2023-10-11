@@ -21,7 +21,13 @@ function App() {
                   key={index}
                   path={item.path}
                   element={item.component}
-                />
+                >
+                  {
+                    item.navBar && item.navBar.map((item, index)=> {
+                      return (<Route key={index} path={item.name} element={item.page} />);
+                    })
+                  }
+                </Route>
               );
             })
           }
